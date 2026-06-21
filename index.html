@@ -221,6 +221,28 @@ section { padding: 100px 24px; }
 }
 .contact-email:hover { background: #234B73; transform: translateY(-2px); }
 
+/* ─── FAQ ─── */
+.faq { background: #F7F9FC; }
+.faq-list { max-width: 720px; margin: 0 auto; text-align: left; }
+.faq-item {
+  background: #FFFFFF;
+  border-radius: 12px;
+  padding: 24px 28px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 6px rgba(27,58,92,0.04);
+  border: 1px solid #EDF0F5;
+}
+.faq-q {
+  font-size: 16px; font-weight: 600; color: #1B3A5C;
+  margin-bottom: 8px; line-height: 1.4;
+}
+.faq-a {
+  font-size: 14px; color: #636E72;
+  line-height: 1.6;
+}
+.faq-a a { color: #1B3A5C; font-weight: 500; }
+.faq-a a:hover { text-decoration: underline; }
+
 /* ─── FOOTER ─── */
 footer {
   background: #1B3A5C; color: rgba(255,255,255,0.7);
@@ -274,6 +296,9 @@ footer .age-warning {
   .donation-actions .btn { padding: 14px; font-size: 15px; }
   .contact-email { display: block; padding: 16px; font-size: 16px; }
   .contact-desc { margin-bottom: 24px; }
+  .faq-item { padding: 20px; }
+  .faq-q { font-size: 15px; }
+  .faq-a { font-size: 13px; }
   footer { padding: 36px 20px; }
   footer .footer-links { gap: 16px; font-size: 13px; flex-wrap: wrap; }
 }
@@ -361,6 +386,37 @@ footer .age-warning {
   </div>
 </section>
 
+<!-- ═══ FAQ ─── -->
+<section class="faq" id="faq">
+  <div class="section-inner text-center">
+    <span class="section-tag" data-i18n="faqTag">FAQ</span>
+    <h2 class="section-title" data-i18n="faqTitle">Preguntas frecuentes</h2>
+    <p class="section-desc" data-i18n="faqDesc">Todo lo que necesitás saber antes de comprar.</p>
+  </div>
+  <div class="section-inner faq-list">
+    <div class="faq-item">
+      <div class="faq-q" data-i18n="faq1q">¿Cómo recibo el contenido después del pago?</div>
+      <div class="faq-a" data-i18n="faq1a">Una vez que se confirma el pago, te envío el contenido automáticamente al mail que uses en la transacción. Si tenés alguna duda, contactame.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" data-i18n="faq2q">¿Qué métodos de pago aceptan?</div>
+      <div class="faq-a" data-i18n="faq2a">Acepto pagos con tarjeta de crédito o débito a través de Takenos (USD) y Mercado Pago (ARS). Todo es seguro y cifrado.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" data-i18n="faq3q">¿Los pagos son seguros?</div>
+      <div class="faq-a" data-i18n="faq3a">Sí. Todos los pagos se procesan a través de Takenos y Mercado Pago, dos plataformas confiables con cifrado y protección al comprador.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" data-i18n="faq4q">¿Puedo pagar desde cualquier país?</div>
+      <div class="faq-a" data-i18n="faq4a">Sí. Con Takenos podés pagar desde cualquier país con tarjeta internacional. Si estás en Argentina, también podés usar Mercado Pago en pesos.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" data-i18n="faq5q">¿Qué pasa si no recibo el contenido?</div>
+      <div class="faq-a" data-i18n="faq5a">Si pasaron más de 24 horas y no recibiste nada, escribime a dropsdrops2005@gmail.com y lo resuelvo al instante.</div>
+    </div>
+  </div>
+</section>
+
 <!-- ═══ CONTACT ─── -->
 <section class="contact" id="contacto">
   <div class="section-inner text-center">
@@ -382,6 +438,7 @@ footer .age-warning {
   <p data-i18n="footerTag">Contenido exclusivo +18</p>
   <div class="footer-links">
     <a href="#packs" data-i18n="footerPacks">Packs</a>
+    <a href="#faq" data-i18n="footerFaq">FAQ</a>
     <a href="#apoyo" data-i18n="footerSupport">Apoyo</a>
     <a href="#contacto" data-i18n="footerContact">Contacto</a>
   </div>
@@ -437,12 +494,26 @@ const I18N = {
     donateDesc: 'Si te gusta lo que hago y querés contribuir a que siga creando, podés dejar una contribución voluntaria. Cualquier monto es bienvenido.',
     donateUsd: '💳 USD',
     donateArs: '🇦🇷 ARS',
+    faqTag: 'FAQ',
+    faqTitle: 'Preguntas frecuentes',
+    faqDesc: 'Todo lo que necesitás saber antes de comprar.',
+    faq1q: '¿Cómo recibo el contenido después del pago?',
+    faq1a: 'Una vez que se confirma el pago, te envío el contenido automáticamente al mail que uses en la transacción. Si tenés alguna duda, contactame.',
+    faq2q: '¿Qué métodos de pago aceptan?',
+    faq2a: 'Acepto pagos con tarjeta de crédito o débito a través de Takenos (USD) y Mercado Pago (ARS). Todo es seguro y cifrado.',
+    faq3q: '¿Los pagos son seguros?',
+    faq3a: 'Sí. Todos los pagos se procesan a través de Takenos y Mercado Pago, dos plataformas confiables con cifrado y protección al comprador.',
+    faq4q: '¿Puedo pagar desde cualquier país?',
+    faq4a: 'Sí. Con Takenos podés pagar desde cualquier país con tarjeta internacional. Si estás en Argentina, también podés usar Mercado Pago en pesos.',
+    faq5q: '¿Qué pasa si no recibo el contenido?',
+    faq5a: 'Si pasaron más de 24 horas y no recibiste nada, escribime a dropsdrops2005@gmail.com y lo resuelvo al instante.',
     contactTag: 'Contacto',
     contactTitle: '¿Querés tu propia página?',
     contactDesc: 'Si sos creador de contenido y querés una página como esta —con tus packs, tus precios, tu estilo— mandame un mail y la armamos juntos.',
     footerTag: 'Contenido exclusivo +18',
-    footerPacks: 'Ejemplos',
-    footerSupport: 'Donaciones',
+    footerPacks: 'Packs',
+    footerSupport: 'Apoyo',
+    footerFaq: 'FAQ',
     footerContact: 'Contacto',
     ageWarning: '+18 · Solo para mayores de edad',
     buyUsd: 'USD',
@@ -465,12 +536,26 @@ const I18N = {
     donateDesc: 'If you like what I do and want to help me keep creating, you can leave a voluntary contribution. Any amount is welcome.',
     donateUsd: '💳 USD',
     donateArs: '🇦🇷 ARS',
+    faqTag: 'FAQ',
+    faqTitle: 'Frequently asked questions',
+    faqDesc: 'Everything you need to know before buying.',
+    faq1q: 'How do I receive the content after payment?',
+    faq1a: 'Once the payment is confirmed, I send the content automatically to the email you used in the transaction. If you have any questions, contact me.',
+    faq2q: 'What payment methods do you accept?',
+    faq2a: 'I accept credit and debit card payments through Takenos (USD) and Mercado Pago (ARS). Everything is secure and encrypted.',
+    faq3q: 'Are the payments secure?',
+    faq3a: 'Yes. All payments are processed through Takenos and Mercado Pago, two trusted platforms with encryption and buyer protection.',
+    faq4q: 'Can I pay from any country?',
+    faq4a: 'Yes. With Takenos you can pay from any country with an international card. If you are in Argentina, you can also use Mercado Pago in pesos.',
+    faq5q: 'What if I don\'t receive the content?',
+    faq5a: 'If more than 24 hours have passed and you haven\'t received anything, write to dropsdrops2005@gmail.com and I\'ll resolve it instantly.',
     contactTag: 'Contact',
     contactTitle: 'Want your own page?',
     contactDesc: 'If you\'re a content creator and want a page like this —with your packs, your prices, your style— send me an email and we\'ll build it together.',
     footerTag: 'Exclusive +18 content',
-    footerPacks: 'Examples',
-    footerSupport: 'Donations',
+    footerPacks: 'Packs',
+    footerSupport: 'Support',
+    footerFaq: 'FAQ',
     footerContact: 'Contact',
     ageWarning: '+18 · Adults only',
     buyUsd: 'USD',
