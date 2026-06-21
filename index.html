@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Drops — Model</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  color: #2D3436;
+  background: #FFFFFF;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color:inherit; text-decoration:none; }
+img { max-width:100%; display:block; }
+
+/* ─── HEADER ─── */
+header {
+  position: fixed; top:0; left:0; right:0; z-index:100;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(232,236,241,0.8);
+}
+.header-inner {
+  max-width: 1200px; margin:0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 24px;
+}
+.logo {
+  font-size: 24px; font-weight: 700;
+  letter-spacing: -0.5px;
+  color: #1B3A5C;
+}
+.logo span { color: #C9A84C; }
+.lang-toggle {
+  display: flex; gap: 4px;
+  background: #F0F2F5; border-radius: 8px; padding: 3px;
+}
+.lang-btn {
+  padding: 6px 14px; border:none; border-radius: 6px;
+  font-size: 13px; font-weight: 500;
+  cursor: pointer; transition: all .2s;
+  background: transparent; color: #636E72;
+}
+.lang-btn.active {
+  background: #FFFFFF; color: #1B3A5C;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+/* ─── SECTIONS COMMON ─── */
+section { padding: 100px 24px; }
+.section-inner {
+  max-width: 1100px; margin:0 auto;
+}
+.section-tag {
+  display: inline-block;
+  font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+  color: #C9A84C; margin-bottom: 8px;
+}
+.section-title {
+  font-size: 32px; font-weight: 700; color: #1B3A5C;
+  margin-bottom: 16px; line-height: 1.2;
+}
+.section-desc {
+  font-size: 17px; color: #636E72;
+  max-width: 600px; margin-bottom: 48px;
+}
+.text-center { text-align: center; }
+.text-center .section-desc { margin-left: auto; margin-right: auto; }
+
+/* ─── HERO ─── */
+.hero {
+  min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, #F7F9FC 0%, #EDF1F7 100%);
+  padding-top: 80px;
+}
+.hero-content { text-align: center; max-width: 680px; }
+.hero-badge {
+  display: inline-block;
+  background: rgba(201,168,76,0.12);
+  color: #C9A84C; font-size: 13px; font-weight: 600;
+  padding: 6px 16px; border-radius: 20px;
+  margin-bottom: 24px;
+}
+.hero-title {
+  font-size: 48px; font-weight: 700; color: #1B3A5C;
+  line-height: 1.15; margin-bottom: 16px;
+}
+.hero-title em { font-style: normal; color: #C9A84C; }
+.hero-sub {
+  font-size: 18px; color: #636E72;
+  margin-bottom: 32px; line-height: 1.6;
+}
+.hero-cta {
+  display: inline-block;
+  background: #1B3A5C; color: #FFFFFF;
+  padding: 14px 36px; border-radius: 10px;
+  font-size: 16px; font-weight: 600;
+  transition: background .2s, transform .2s;
+}
+.hero-cta:hover { background: #234B73; transform: translateY(-2px); }
+
+/* ─── PACKS ─── */
+.packs { background: #FFFFFF; }
+.packs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 32px;
+}
+.pack-card {
+  background: #FFFFFF;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(27,58,92,0.06);
+  border: 1px solid #EDF0F5;
+  transition: transform .25s, box-shadow .25s;
+}
+.pack-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(27,58,92,0.1); }
+.pack-img {
+  width: 100%; height: 240px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 40px; color: rgba(255,255,255,0.5);
+  position: relative; overflow: hidden;
+}
+.pack-img .pack-label {
+  position: absolute; top: 16px; left: 16px;
+  background: rgba(0,0,0,0.35); backdrop-filter: blur(4px);
+  color: #FFFFFF; font-size: 11px; font-weight: 600; letter-spacing: 1px;
+  padding: 4px 12px; border-radius: 6px;
+}
+.pack-body { padding: 24px; }
+.pack-title {
+  font-size: 20px; font-weight: 700; color: #1B3A5C;
+  margin-bottom: 8px;
+}
+.pack-desc {
+  font-size: 14px; color: #636E72;
+  margin-bottom: 16px; line-height: 1.5;
+}
+.pack-price {
+  font-size: 26px; font-weight: 700; color: #1B3A5C;
+  margin-bottom: 20px;
+}
+.pack-price small {
+  font-size: 14px; font-weight: 500; color: #636E72;
+}
+.pack-actions {
+  display: flex; gap: 10px; flex-wrap: wrap;
+}
+.btn {
+  flex:1; min-width: 100px;
+  padding: 12px 16px; border: none; border-radius: 10px;
+  font-size: 14px; font-weight: 600;
+  cursor: pointer; transition: all .2s;
+  text-align: center;
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+}
+.btn-usd {
+  background: #1B3A5C; color: #FFFFFF;
+}
+.btn-usd:hover { background: #234B73; }
+.btn-ars {
+  background: #E8ECF1; color: #1B3A5C;
+}
+.btn-ars:hover { background: #D5DCE6; }
+.btn-ars .flag { font-size: 16px; }
+
+/* ─── DONATIONS ─── */
+.donations {
+  background: #F7F9FC;
+}
+.donation-card {
+  max-width: 520px; margin:0 auto;
+  background: #FFFFFF;
+  border-radius: 16px;
+  padding: 40px 36px;
+  box-shadow: 0 2px 12px rgba(27,58,92,0.06);
+  border: 1px solid #EDF0F5;
+  text-align: center;
+}
+.donation-heart {
+  font-size: 40px; margin-bottom: 12px;
+}
+.donation-card .section-title { font-size: 26px; }
+.donation-card .section-desc { font-size: 15px; margin-bottom: 28px; }
+.donation-input-wrap {
+  display: flex; align-items: center;
+  background: #F7F9FC; border-radius: 10px;
+  border: 1px solid #E8ECF1;
+  margin-bottom: 20px; overflow: hidden;
+}
+.donation-input-wrap span {
+  padding: 0 16px; font-weight: 600; color: #636E72;
+  font-size: 18px;
+}
+.donation-input-wrap input {
+  flex:1; padding: 16px 16px 16px 4px;
+  border: none; background: transparent;
+  font-size: 18px; font-weight: 600; color: #1B3A5C;
+  outline: none; font-family: inherit;
+}
+.donation-input-wrap input::placeholder { color: #B2BEC3; font-weight: 400; }
+.donation-actions { display: flex; gap: 10px; }
+.donation-actions .btn { flex:1; }
+
+/* ─── FOOTER ─── */
+footer {
+  background: #1B3A5C; color: rgba(255,255,255,0.7);
+  padding: 48px 24px; text-align: center;
+}
+footer .logo { color: #FFFFFF; margin-bottom: 8px; display: inline-block; }
+footer .logo span { color: #C9A84C; }
+footer p { font-size: 14px; margin-bottom: 4px; }
+footer .footer-links {
+  display: flex; justify-content: center; gap: 24px;
+  margin-top: 20px; font-size: 14px;
+}
+footer .footer-links a { color: rgba(255,255,255,0.6); transition: color .2s; }
+footer .footer-links a:hover { color: #FFFFFF; }
+footer .age-warning {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 6px 16px;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 6px;
+  font-size: 12px; letter-spacing: 1px;
+  color: rgba(255,255,255,0.4);
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 768px) {
+  section { padding: 72px 20px; }
+  .hero-title { font-size: 34px; }
+  .hero-sub { font-size: 16px; }
+  .section-title { font-size: 26px; }
+  .packs-grid { grid-template-columns: 1fr; }
+  .pack-actions { flex-direction: column; }
+  .donation-card { padding: 28px 20px; }
+  .donation-actions { flex-direction: column; }
+}
+@media (max-width: 480px) {
+  .hero-title { font-size: 28px; }
+  .header-inner { padding: 12px 16px; }
+  .logo { font-size: 20px; }
+}
+
+/* ─── UTILITIES ─── */
+.hidden { display: none !important; }
+</style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<header>
+  <div class="header-inner">
+    <a href="#" class="logo" data-i18n="logo">Drops<span>.</span></a>
+    <div class="lang-toggle">
+      <button class="lang-btn active" data-lang="es">ES</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+  </div>
+</header>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" id="inicio">
+  <div class="hero-content">
+    <div class="hero-badge" data-i18n="heroBadge">✨ Modelo IA</div>
+    <h1 class="hero-title" data-i18n="heroTitle">
+      Contenido <em>exclusivo</em><br>para vos
+    </h1>
+    <p class="hero-sub" data-i18n="heroSub">
+      Descubrí packs únicos de contenido +18. Apoyá mi trabajo y accedé a material
+      que no vas a encontrar en ningún otro lado.
+    </p>
+    <a href="#packs" class="hero-cta" data-i18n="heroCta">Ver Packs</a>
+  </div>
+</section>
+
+<!-- ═══ PACKS ═══ -->
+<section class="packs" id="packs">
+  <div class="section-inner text-center">
+    <span class="section-tag" data-i18n="packsTag">Packs</span>
+    <h2 class="section-title" data-i18n="packsTitle">Elegí tu pack</h2>
+    <p class="section-desc" data-i18n="packsDesc">
+      Cada pack incluye material exclusivo +18. Una vez realizado el pago,
+      recibirás el contenido al instante.
+    </p>
+  </div>
+  <div class="section-inner">
+    <div class="packs-grid" id="packsGrid">
+      <!-- injected by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DONATIONS ═══ -->
+<section class="donations" id="apoyo">
+  <div class="section-inner text-center">
+    <span class="section-tag" data-i18n="donateTag">Apoyo</span>
+    <div class="donation-card">
+      <div class="donation-heart">💛</div>
+      <h2 class="section-title" data-i18n="donateTitle">Apoyá mi trabajo</h2>
+      <p class="section-desc" data-i18n="donateDesc">
+        Si te gusta lo que hago y querés contribuir a que siga creando,
+        podés dejar una contribución voluntaria. Cualquier monto es bienvenido.
+      </p>
+      <div class="donation-input-wrap">
+        <span>$</span>
+        <input type="number" id="donationAmount" value="10" min="1" step="1">
+      </div>
+      <div class="donation-actions">
+        <a href="https://app.takenos.com/pay/ff3fe24e-ed79-4d82-8693-901f6c5d0bab"
+           target="_blank" rel="noopener" class="btn btn-usd" data-i18n="donateUsd">
+          💳 USD
+        </a>
+        <a href="https://link.mercadopago.com.ar/kkmm"
+           target="_blank" rel="noopener" class="btn btn-ars" data-i18n="donateArs">
+          <span class="flag">🇦🇷</span> ARS
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <a href="#" class="logo" data-i18n="logo">Drops<span>.</span></a>
+  <p data-i18n="footerTag">Contenido exclusivo +18</p>
+  <div class="footer-links">
+    <a href="#packs" data-i18n="footerPacks">Packs</a>
+    <a href="#apoyo" data-i18n="footerSupport">Apoyo</a>
+  </div>
+  <div class="age-warning" data-i18n="ageWarning">+18 · Solo para mayores de edad</div>
+</footer>
+
+<script>
+/* ═══════════════════════════════════════════
+   DATA
+   ═══════════════════════════════════════════ */
+const PACKS = [
+  {
+    id: 1,
+    gradient: 'linear-gradient(135deg, #FF6B6B, #C44569)',
+    label: 'NUEVO',
+    es: { title:'Pack Básico', desc:'10 fotos HD + 2 videos cortos. Ideal para empezar.', price:'$15' },
+    en: { title:'Starter Pack', desc:'10 HD photos + 2 short videos. Great to start.', price:'$15' }
+  },
+  {
+    id: 2,
+    gradient: 'linear-gradient(135deg, #48DBFB, #0ABDE3)',
+    label: 'POPULAR',
+    es: { title:'Pack Premium', desc:'25 fotos HD + 5 videos + acceso a historias exclusivas por 1 mes.', price:'$35' },
+    en: { title:'Premium Pack', desc:'25 HD photos + 5 videos + 1 month exclusive stories access.', price:'$35' }
+  },
+  {
+    id: 3,
+    gradient: 'linear-gradient(135deg, #FECA57, #FF9F43)',
+    label: 'VIP',
+    es: { title:'Pack Deluxe', desc:'Todo el contenido del mes + videos 4K + chat privado por 1 semana.', price:'$65' },
+    en: { title:'Deluxe Pack', desc:'All monthly content + 4K videos + 1 week private chat.', price:'$65' }
+  },
+  {
+    id: 4,
+    gradient: 'linear-gradient(135deg, #A29BFE, #6C5CE7)',
+    label: 'LIMITADO',
+    es: { title:'Pack Colección', desc:'Set completo de temporada + making of + sesión en vivo exclusiva.', price:'$120' },
+    en: { title:'Collection Pack', desc:'Full season set + behind the scenes + exclusive live session.', price:'$120' }
+  }
+];
+
+const I18N = {
+  es: {
+    logo: 'Drops.',
+    heroBadge: '✨ Modelo IA',
+    heroTitle: 'Contenido <em>exclusivo</em><br>para vos',
+    heroSub: 'Descubrí packs únicos de contenido +18. Apoyá mi trabajo y accedé a material que no vas a encontrar en ningún otro lado.',
+    heroCta: 'Ver Packs',
+    packsTag: 'Packs',
+    packsTitle: 'Elegí tu pack',
+    packsDesc: 'Cada pack incluye material exclusivo +18. Una vez realizado el pago, recibirás el contenido al instante.',
+    donateTag: 'Apoyo',
+    donateTitle: 'Apoyá mi trabajo',
+    donateDesc: 'Si te gusta lo que hago y querés contribuir a que siga creando, podés dejar una contribución voluntaria. Cualquier monto es bienvenido.',
+    donateUsd: '💳 USD',
+    donateArs: '🇦🇷 ARS',
+    footerTag: 'Contenido exclusivo +18',
+    footerPacks: 'Packs',
+    footerSupport: 'Apoyo',
+    ageWarning: '+18 · Solo para mayores de edad',
+    buyUsd: 'USD',
+    buyArs: 'ARS',
+    packLabelNew: 'NUEVO',
+    packLabelPopular: 'POPULAR',
+    packLabelVip: 'VIP',
+    packLabelLimited: 'LIMITADO'
+  },
+  en: {
+    logo: 'Drops.',
+    heroBadge: '✨ AI Model',
+    heroTitle: '<em>Exclusive</em> content<br>for you',
+    heroSub: 'Discover unique +18 content packs. Support my work and get access to material you won\'t find anywhere else.',
+    heroCta: 'View Packs',
+    packsTag: 'Packs',
+    packsTitle: 'Choose your pack',
+    packsDesc: 'Each pack includes exclusive +18 material. Once payment is confirmed, you\'ll receive the content instantly.',
+    donateTag: 'Support',
+    donateTitle: 'Support my work',
+    donateDesc: 'If you like what I do and want to help me keep creating, you can leave a voluntary contribution. Any amount is welcome.',
+    donateUsd: '💳 USD',
+    donateArs: '🇦🇷 ARS',
+    footerTag: 'Exclusive +18 content',
+    footerPacks: 'Packs',
+    footerSupport: 'Support',
+    ageWarning: '+18 · Adults only',
+    buyUsd: 'USD',
+    buyArs: 'ARS',
+    packLabelNew: 'NEW',
+    packLabelPopular: 'POPULAR',
+    packLabelVip: 'VIP',
+    packLabelLimited: 'LIMITED'
+  }
+};
+
+/* ═══════════════════════════════════════════
+   STATE
+   ═══════════════════════════════════════════ */
+let currentLang = 'es';
+
+/* ═══════════════════════════════════════════
+   DOM REFS
+   ═══════════════════════════════════════════ */
+const langBtns = document.querySelectorAll('.lang-btn');
+const packsGrid = document.getElementById('packsGrid');
+const donationAmount = document.getElementById('donationAmount');
+
+/* ═══════════════════════════════════════════
+   RENDER PACKS
+   ═══════════════════════════════════════════ */
+function renderPacks(lang) {
+  packsGrid.innerHTML = PACKS.map(p => {
+    const t = p[lang === 'en' ? 'en' : 'es'];
+    const labelKey = { 'NUEVO':'packLabelNew', 'POPULAR':'packLabelPopular', 'VIP':'packLabelVip', 'LIMITADO':'packLabelLimited' }[p.label];
+    const localizedLabel = I18N[lang][labelKey] || p.label;
+    return `
+      <div class="pack-card">
+        <div class="pack-img" style="background: ${p.gradient};">
+          <span class="pack-label">${localizedLabel}</span>
+        </div>
+        <div class="pack-body">
+          <h3 class="pack-title">${t.title}</h3>
+          <p class="pack-desc">${t.desc}</p>
+          <div class="pack-price">${t.price} <small>USD</small></div>
+          <div class="pack-actions">
+            <a href="https://app.takenos.com/pay/ff3fe24e-ed79-4d82-8693-901f6c5d0bab"
+               target="_blank" rel="noopener" class="btn btn-usd">
+              💳 ${I18N[lang].buyUsd}
+            </a>
+            <a href="https://link.mercadopago.com.ar/kkmm"
+               target="_blank" rel="noopener" class="btn btn-ars">
+              <span class="flag">🇦🇷</span> ${I18N[lang].buyArs}
+            </a>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+/* ═══════════════════════════════════════════
+   I18N
+   ═══════════════════════════════════════════ */
+function applyLang(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang === 'es' ? 'es' : 'en';
+
+  /* update data-i18n elements */
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    const txt = I18N[lang][key];
+    if (txt !== undefined) {
+      el.innerHTML = txt;
+    }
+  });
+
+  /* toggle active lang button */
+  langBtns.forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.lang === lang);
+  });
+
+  /* re-render packs (they contain dynamic text) */
+  renderPacks(lang);
+}
+
+/* ═══════════════════════════════════════════
+   EVENTS
+   ═══════════════════════════════════════════ */
+langBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    applyLang(btn.dataset.lang);
+  });
+});
+
+/* ═══════════════════════════════════════════
+   INIT
+   ═══════════════════════════════════════════ */
+applyLang('es');
+</script>
+</body>
+</html>
