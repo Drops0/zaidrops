@@ -150,6 +150,7 @@ section { padding: 100px 24px; }
 .pack-price small {
   font-size: 14px; font-weight: 500; color: #636E72;
 }
+.price-sep { color: #D5DCE6; font-weight: 300; margin: 0 6px; }
 .pack-actions {
   display: flex; gap: 10px; flex-wrap: wrap;
 }
@@ -567,31 +568,31 @@ footer .age-warning {
 const PACKS = [
   {
     id: 1,
-    gradient: 'linear-gradient(135deg, #FF6B6B, #C44569)',
+    img: 'img/tetas.jpg',
     label: 'NUEVO',
-    es: { title:'Pack Básico', desc:'10 fotos HD + 2 videos cortos. Ideal para empezar.', price:'$15' },
-    en: { title:'Starter Pack', desc:'10 HD photos + 2 short videos. Great to start.', price:'$15' }
+    es: { title:'Tetass', desc:'12 fotos exclusivas +18.', priceUsd:'$6', priceArs:'$9.000' },
+    en: { title:'Tetass', desc:'12 exclusive +18 photos.', priceUsd:'$6', priceArs:'$9.000' }
   },
   {
     id: 2,
-    gradient: 'linear-gradient(135deg, #48DBFB, #0ABDE3)',
+    img: 'img/en4.jpg',
     label: 'POPULAR',
-    es: { title:'Pack Premium', desc:'25 fotos HD + 5 videos + acceso a historias exclusivas por 1 mes.', price:'$35' },
-    en: { title:'Premium Pack', desc:'25 HD photos + 5 videos + 1 month exclusive stories access.', price:'$35' }
+    es: { title:'En 4', desc:'12 fotos exclusivas +18.', priceUsd:'$8', priceArs:'$12.000' },
+    en: { title:'En 4', desc:'12 exclusive +18 photos.', priceUsd:'$8', priceArs:'$12.000' }
   },
   {
     id: 3,
-    gradient: 'linear-gradient(135deg, #FECA57, #FF9F43)',
+    img: 'img/variado.jpg',
     label: 'VIP',
-    es: { title:'Pack Deluxe', desc:'Todo el contenido del mes + videos 4K + chat privado por 1 semana.', price:'$65' },
-    en: { title:'Deluxe Pack', desc:'All monthly content + 4K videos + 1 week private chat.', price:'$65' }
+    es: { title:'Variado', desc:'12 fotos exclusivas +18.', priceUsd:'$8', priceArs:'$12.000' },
+    en: { title:'Variado', desc:'12 exclusive +18 photos.', priceUsd:'$8', priceArs:'$12.000' }
   },
   {
     id: 4,
-    gradient: 'linear-gradient(135deg, #A29BFE, #6C5CE7)',
+    img: 'img/variado2.jpg',
     label: 'LIMITADO',
-    es: { title:'Pack Colección', desc:'Set completo de temporada + making of + sesión en vivo exclusiva.', price:'$120' },
-    en: { title:'Collection Pack', desc:'Full season set + behind the scenes + exclusive live session.', price:'$120' }
+    es: { title:'Variado 2.0', desc:'12 fotos exclusivas +18.', priceUsd:'$8', priceArs:'$12.000' },
+    en: { title:'Variado 2.0', desc:'12 exclusive +18 photos.', priceUsd:'$8', priceArs:'$12.000' }
   }
 ];
 
@@ -716,13 +717,13 @@ function renderPacks(lang) {
     const localizedLabel = I18N[lang][labelKey] || p.label;
     return `
       <div class="pack-card">
-        <div class="pack-img" style="background: ${p.gradient};">
+        <div class="pack-img" style="background-image: url('${p.img}'); background-size: cover; background-position: center;">
           <span class="pack-label">${localizedLabel}</span>
         </div>
         <div class="pack-body">
           <h3 class="pack-title">${t.title}</h3>
           <p class="pack-desc">${t.desc}</p>
-          <div class="pack-price">${t.price} <small>USD</small></div>
+          <div class="pack-price">${t.priceUsd} <small>USD</small> <span class="price-sep">·</span> ${t.priceArs} <small>ARS</small></div>
           <div class="pack-actions">
             <a href="https://app.takenos.com/pay/ff3fe24e-ed79-4d82-8693-901f6c5d0bab"
                target="_blank" rel="noopener" class="btn btn-usd">
