@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Drops — Model</title>
+<title>Drops — Página de Pagos</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -83,13 +83,6 @@ section { padding: 100px 24px; }
   padding-top: 80px;
 }
 .hero-content { text-align: center; max-width: 680px; }
-.hero-badge {
-  display: inline-block;
-  background: rgba(201,168,76,0.12);
-  color: #C9A84C; font-size: 13px; font-weight: 600;
-  padding: 6px 16px; border-radius: 20px;
-  margin-bottom: 24px;
-}
 .hero-title {
   font-size: 48px; font-weight: 700; color: #1B3A5C;
   line-height: 1.15; margin-bottom: 16px;
@@ -211,6 +204,18 @@ section { padding: 100px 24px; }
 .donation-actions { display: flex; gap: 10px; }
 .donation-actions .btn { flex:1; }
 
+/* ─── CONTACT ─── */
+.contact { background: #FFFFFF; }
+.contact-desc { margin-bottom: 32px; }
+.contact-email {
+  display: inline-block;
+  background: #1B3A5C; color: #FFFFFF;
+  padding: 14px 32px; border-radius: 10px;
+  font-size: 18px; font-weight: 600;
+  transition: background .2s, transform .2s;
+}
+.contact-email:hover { background: #234B73; transform: translateY(-2px); }
+
 /* ─── FOOTER ─── */
 footer {
   background: #1B3A5C; color: rgba(255,255,255,0.7);
@@ -272,26 +277,25 @@ footer .age-warning {
 <!-- ═══ HERO ═══ -->
 <section class="hero" id="inicio">
   <div class="hero-content">
-    <div class="hero-badge" data-i18n="heroBadge">✨ Modelo IA</div>
     <h1 class="hero-title" data-i18n="heroTitle">
-      Contenido <em>exclusivo</em><br>para vos
+      <em>Drops</em> — desarrollo<br>de páginas de pago
     </h1>
     <p class="hero-sub" data-i18n="heroSub">
-      Descubrí packs únicos de contenido +18. Apoyá mi trabajo y accedé a material
-      que no vas a encontrar en ningún otro lado.
+      Creo páginas modernas y seguras para recibir pagos. Si querés tener tu propio
+      espacio para vender contenido o recibir donaciones, te ayudo a armarlo.
     </p>
-    <a href="#packs" class="hero-cta" data-i18n="heroCta">Ver Packs</a>
+    <a href="#packs" class="hero-cta" data-i18n="heroCta">Ver ejemplos</a>
   </div>
 </section>
 
 <!-- ═══ PACKS ═══ -->
 <section class="packs" id="packs">
   <div class="section-inner text-center">
-    <span class="section-tag" data-i18n="packsTag">Packs</span>
-    <h2 class="section-title" data-i18n="packsTitle">Elegí tu pack</h2>
+    <span class="section-tag" data-i18n="packsTag">Ejemplos</span>
+    <h2 class="section-title" data-i18n="packsTitle">Ejemplo de packs</h2>
     <p class="section-desc" data-i18n="packsDesc">
-      Cada pack incluye material exclusivo +18. Una vez realizado el pago,
-      recibirás el contenido al instante.
+      Este es un ejemplo de cómo se ven los packs en una página como la que
+      puedo armarte. Cada uno con su preview, precio y botones de pago.
     </p>
   </div>
   <div class="section-inner">
@@ -304,13 +308,13 @@ footer .age-warning {
 <!-- ═══ DONATIONS ═══ -->
 <section class="donations" id="apoyo">
   <div class="section-inner text-center">
-    <span class="section-tag" data-i18n="donateTag">Apoyo</span>
+    <span class="section-tag" data-i18n="donateTag">Donaciones</span>
     <div class="donation-card">
       <div class="donation-heart">💛</div>
-      <h2 class="section-title" data-i18n="donateTitle">Apoyá mi trabajo</h2>
+      <h2 class="section-title" data-i18n="donateTitle">Sección de donaciones</h2>
       <p class="section-desc" data-i18n="donateDesc">
-        Si te gusta lo que hago y querés contribuir a que siga creando,
-        podés dejar una contribución voluntaria. Cualquier monto es bienvenido.
+        También incluyo una sección para recibir donaciones o apoyo voluntario,
+        como esta. Cada creador elige si ponerla o no.
       </p>
       <div class="donation-input-wrap">
         <span>$</span>
@@ -330,13 +334,29 @@ footer .age-warning {
   </div>
 </section>
 
+<!-- ═══ CONTACT ─── -->
+<section class="contact" id="contacto">
+  <div class="section-inner text-center">
+    <span class="section-tag" data-i18n="contactTag">Contacto</span>
+    <h2 class="section-title" data-i18n="contactTitle">¿Querés tu propia página?</h2>
+    <p class="section-desc contact-desc" data-i18n="contactDesc">
+      Si sos creador de contenido y querés una página como esta —con tus packs,
+      tus precios, tu estilo— mandame un mail y la armamos juntos.
+    </p>
+    <a href="mailto:dropsdrops2005@gmail.com" class="contact-email">
+      dropsdrops2005@gmail.com
+    </a>
+  </div>
+</section>
+
 <!-- ═══ FOOTER ═══ -->
 <footer>
   <a href="#" class="logo" data-i18n="logo">Drops<span>.</span></a>
-  <p data-i18n="footerTag">Contenido exclusivo +18</p>
+  <p data-i18n="footerTag">Desarrollo de páginas de pago</p>
   <div class="footer-links">
-    <a href="#packs" data-i18n="footerPacks">Packs</a>
-    <a href="#apoyo" data-i18n="footerSupport">Apoyo</a>
+    <a href="#packs" data-i18n="footerPacks">Ejemplos</a>
+    <a href="#apoyo" data-i18n="footerSupport">Donaciones</a>
+    <a href="#contacto" data-i18n="footerContact">Contacto</a>
   </div>
   <div class="age-warning" data-i18n="ageWarning">+18 · Solo para mayores de edad</div>
 </footer>
@@ -379,21 +399,24 @@ const PACKS = [
 const I18N = {
   es: {
     logo: 'Drops.',
-    heroBadge: '✨ Modelo IA',
-    heroTitle: 'Contenido <em>exclusivo</em><br>para vos',
-    heroSub: 'Descubrí packs únicos de contenido +18. Apoyá mi trabajo y accedé a material que no vas a encontrar en ningún otro lado.',
-    heroCta: 'Ver Packs',
-    packsTag: 'Packs',
-    packsTitle: 'Elegí tu pack',
-    packsDesc: 'Cada pack incluye material exclusivo +18. Una vez realizado el pago, recibirás el contenido al instante.',
-    donateTag: 'Apoyo',
-    donateTitle: 'Apoyá mi trabajo',
-    donateDesc: 'Si te gusta lo que hago y querés contribuir a que siga creando, podés dejar una contribución voluntaria. Cualquier monto es bienvenido.',
+    heroTitle: '<em>Drops</em> — desarrollo<br>de páginas de pago',
+    heroSub: 'Creo páginas modernas y seguras para recibir pagos. Si querés tener tu propio espacio para vender contenido o recibir donaciones, te ayudo a armarlo.',
+    heroCta: 'Ver ejemplos',
+    packsTag: 'Ejemplos',
+    packsTitle: 'Ejemplo de packs',
+    packsDesc: 'Este es un ejemplo de cómo se ven los packs en una página como la que puedo armarte. Cada uno con su preview, precio y botones de pago.',
+    donateTag: 'Donaciones',
+    donateTitle: 'Sección de donaciones',
+    donateDesc: 'También incluyo una sección para recibir donaciones o apoyo voluntario, como esta. Cada creador elige si ponerla o no.',
     donateUsd: '💳 USD',
     donateArs: '🇦🇷 ARS',
-    footerTag: 'Contenido exclusivo +18',
-    footerPacks: 'Packs',
-    footerSupport: 'Apoyo',
+    contactTag: 'Contacto',
+    contactTitle: '¿Querés tu propia página?',
+    contactDesc: 'Si sos creador de contenido y querés una página como esta —con tus packs, tus precios, tu estilo— mandame un mail y la armamos juntos.',
+    footerTag: 'Desarrollo de páginas de pago',
+    footerPacks: 'Ejemplos',
+    footerSupport: 'Donaciones',
+    footerContact: 'Contacto',
     ageWarning: '+18 · Solo para mayores de edad',
     buyUsd: 'USD',
     buyArs: 'ARS',
@@ -404,21 +427,24 @@ const I18N = {
   },
   en: {
     logo: 'Drops.',
-    heroBadge: '✨ AI Model',
-    heroTitle: '<em>Exclusive</em> content<br>for you',
-    heroSub: 'Discover unique +18 content packs. Support my work and get access to material you won\'t find anywhere else.',
-    heroCta: 'View Packs',
-    packsTag: 'Packs',
-    packsTitle: 'Choose your pack',
-    packsDesc: 'Each pack includes exclusive +18 material. Once payment is confirmed, you\'ll receive the content instantly.',
-    donateTag: 'Support',
-    donateTitle: 'Support my work',
-    donateDesc: 'If you like what I do and want to help me keep creating, you can leave a voluntary contribution. Any amount is welcome.',
+    heroTitle: '<em>Drops</em> — payment<br>page development',
+    heroSub: 'I build modern, secure payment pages. If you want your own space to sell content or receive donations, I can help you set it up.',
+    heroCta: 'View examples',
+    packsTag: 'Examples',
+    packsTitle: 'Pack examples',
+    packsDesc: 'This is an example of how packs look on a page like the one I can build for you. Each with preview, price and payment buttons.',
+    donateTag: 'Donations',
+    donateTitle: 'Donation section',
+    donateDesc: 'I also include a section for voluntary donations and support, like this one. Each creator chooses whether to include it.',
     donateUsd: '💳 USD',
     donateArs: '🇦🇷 ARS',
-    footerTag: 'Exclusive +18 content',
-    footerPacks: 'Packs',
-    footerSupport: 'Support',
+    contactTag: 'Contact',
+    contactTitle: 'Want your own page?',
+    contactDesc: 'If you\'re a content creator and want a page like this —with your packs, your prices, your style— send me an email and we\'ll build it together.',
+    footerTag: 'Payment page development',
+    footerPacks: 'Examples',
+    footerSupport: 'Donations',
+    footerContact: 'Contact',
     ageWarning: '+18 · Adults only',
     buyUsd: 'USD',
     buyArs: 'ARS',
