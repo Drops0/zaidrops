@@ -166,6 +166,7 @@ section { padding: 100px 24px; }
   background: #1B3A5C; color: #FFFFFF;
 }
 .btn-primary:hover { background: #234B73; }
+.btn-primary .mp-icon { width: 20px; height: 20px; filter: brightness(0) invert(1); }
 
 /* ─── DONATIONS ─── */
 .donations {
@@ -451,7 +452,7 @@ footer .age-warning {
       <div class="donation-actions">
         <a href="https://link.mercadopago.com.ar/kkmm"
            target="_blank" rel="noopener" class="btn btn-primary" data-i18n="donateBtn">
-          💳 Pagar con Mercado Pago
+          <img src="img/mp-logo.svg" alt="MP" class="mp-icon"> Pagar con Mercado Pago
         </a>
       </div>
       <div class="trust-badge" data-i18n="securePayment">
@@ -602,7 +603,7 @@ const I18N = {
     donateUsd: '💳 Pagar',
     donateArs: '🇦🇷 Pagar',
     donateBtn: '💳 Pagar con Mercado Pago',
-    securePayment: 'Pago seguro con Mercado Pago',
+    securePayment: 'Pago procesado por Mercado Pago',
     buyNow: 'Pagar',
     floatingSupport: 'Apoyar',
     barHome: 'Inicio',
@@ -652,7 +653,7 @@ const I18N = {
     donateUsd: '💳 Pay',
     donateArs: '🇦🇷 Pay',
     donateBtn: '💳 Pay with Mercado Pago',
-    securePayment: 'Secure payment with Mercado Pago',
+    securePayment: 'Payment processed by Mercado Pago',
     buyNow: 'Buy',
     floatingSupport: 'Support',
     barHome: 'Home',
@@ -722,7 +723,7 @@ function renderPacks(lang) {
           <div class="pack-actions">
             <a href="https://link.mercadopago.com.ar/kkmm"
                target="_blank" rel="noopener" class="btn btn-primary">
-              💳 ${I18N[lang].buyNow}
+              <img src="img/mp-logo.svg" alt="MP" class="mp-icon"> ${I18N[lang].buyNow}
             </a>
           </div>
           <div class="pack-trust">
