@@ -162,15 +162,10 @@ section { padding: 100px 24px; }
   text-align: center;
   display: inline-flex; align-items: center; justify-content: center; gap: 6px;
 }
-.btn-usd {
+.btn-primary {
   background: #1B3A5C; color: #FFFFFF;
 }
-.btn-usd:hover { background: #234B73; }
-.btn-ars {
-  background: #E8ECF1; color: #1B3A5C;
-}
-.btn-ars:hover { background: #D5DCE6; }
-.btn-ars .flag { font-size: 16px; }
+.btn-primary:hover { background: #234B73; }
 
 /* ─── DONATIONS ─── */
 .donations {
@@ -454,13 +449,9 @@ footer .age-warning {
         <input type="number" id="donationAmount" value="10" min="1" step="1">
       </div>
       <div class="donation-actions">
-        <a href="https://app.takenos.com/pay/ff3fe24e-ed79-4d82-8693-901f6c5d0bab"
-           target="_blank" rel="noopener" class="btn btn-usd" data-i18n="donateUsd">
-          💳 USD
-        </a>
         <a href="https://link.mercadopago.com.ar/kkmm"
-           target="_blank" rel="noopener" class="btn btn-ars" data-i18n="donateArs">
-          <span class="flag">🇦🇷</span> ARS
+           target="_blank" rel="noopener" class="btn btn-primary" data-i18n="donateBtn">
+          💳 Pagar con Mercado Pago
         </a>
       </div>
       <div class="trust-badge" data-i18n="securePayment">
@@ -608,9 +599,11 @@ const I18N = {
     donateTag: 'Apoyo',
     donateTitle: 'Apoyá mi trabajo',
     donateDesc: 'Si te gusta lo que hago y querés contribuir a que siga creando, podés dejar una contribución voluntaria. Cualquier monto es bienvenido.',
-    donateUsd: '💳 USD',
-    donateArs: '🇦🇷 ARS',
-    securePayment: 'Pago seguro con tarjeta',
+    donateUsd: '💳 Pagar',
+    donateArs: '🇦🇷 Pagar',
+    donateBtn: '💳 Pagar con Mercado Pago',
+    securePayment: 'Pago seguro con Mercado Pago',
+    buyNow: 'Pagar',
     floatingSupport: 'Apoyar',
     barHome: 'Inicio',
     barPacks: 'Packs',
@@ -656,9 +649,11 @@ const I18N = {
     donateTag: 'Support',
     donateTitle: 'Support my work',
     donateDesc: 'If you like what I do and want to help me keep creating, you can leave a voluntary contribution. Any amount is welcome.',
-    donateUsd: '💳 USD',
-    donateArs: '🇦🇷 ARS',
-    securePayment: 'Secure card payment',
+    donateUsd: '💳 Pay',
+    donateArs: '🇦🇷 Pay',
+    donateBtn: '💳 Pay with Mercado Pago',
+    securePayment: 'Secure payment with Mercado Pago',
+    buyNow: 'Buy',
     floatingSupport: 'Support',
     barHome: 'Home',
     barPacks: 'Packs',
@@ -725,13 +720,9 @@ function renderPacks(lang) {
           <p class="pack-desc">${t.desc}</p>
           <div class="pack-price">${t.priceUsd} <small>USD</small> <span class="price-sep">·</span> ${t.priceArs} <small>ARS</small></div>
           <div class="pack-actions">
-            <a href="https://app.takenos.com/pay/ff3fe24e-ed79-4d82-8693-901f6c5d0bab"
-               target="_blank" rel="noopener" class="btn btn-usd">
-              💳 ${I18N[lang].buyUsd}
-            </a>
             <a href="https://link.mercadopago.com.ar/kkmm"
-               target="_blank" rel="noopener" class="btn btn-ars">
-              <span class="flag">🇦🇷</span> ${I18N[lang].buyArs}
+               target="_blank" rel="noopener" class="btn btn-primary">
+              💳 ${I18N[lang].buyNow}
             </a>
           </div>
           <div class="pack-trust">
