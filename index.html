@@ -281,6 +281,46 @@ section { padding: 100px 24px; }
 }
 .contact-email:hover { background: #234B73; transform: translateY(-2px); }
 
+/* ─── HOW IT WORKS ─── */
+.how { background: #FFFFFF; }
+.how-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 860px; margin: 0 auto;
+}
+.how-step {
+  text-align: center;
+  padding: 28px 20px;
+  border-radius: 16px;
+  background: #F7F9FC;
+  border: 1px solid #EDF0F5;
+  transition: transform .25s;
+}
+.how-step:hover { transform: translateY(-3px); }
+.how-num {
+  width: 48px; height: 48px;
+  display: flex; align-items: center; justify-content: center;
+  background: #1B3A5C; color: #FFFFFF;
+  border-radius: 50%;
+  font-size: 20px; font-weight: 700;
+  margin: 0 auto 16px;
+}
+.how-step-title {
+  font-size: 17px; font-weight: 600; color: #1B3A5C;
+  margin-bottom: 8px;
+}
+.how-step-desc {
+  font-size: 14px; color: #636E72;
+  line-height: 1.5;
+}
+@media (max-width: 640px) {
+  .how-steps { grid-template-columns: 1fr; gap: 16px; }
+  .how-step { padding: 24px 16px; }
+  .how-step-title { font-size: 15px; }
+  .how-step-desc { font-size: 13px; }
+}
+
 /* ─── FAQ ─── */
 .faq { background: #F7F9FC; }
 .faq-list { max-width: 720px; margin: 0 auto; text-align: left; }
@@ -472,6 +512,32 @@ footer .age-warning {
   </div>
 </section>
 
+<!-- ═══ HOW IT WORKS ─── -->
+<section class="how" id="como-funciona">
+  <div class="section-inner text-center">
+    <span class="section-tag" data-i18n="howTag">¿Cómo funciona?</span>
+    <h2 class="section-title" data-i18n="howTitle">Así trabajamos</h2>
+    <p class="section-desc" data-i18n="howDesc">Todo transparente: vos pagás, nosotros recibimos, le pasamos el pago a la modelo y ella te entrega el contenido.</p>
+  </div>
+  <div class="section-inner how-steps">
+    <div class="how-step">
+      <div class="how-num">1</div>
+      <h3 class="how-step-title" data-i18n="how1Title">Elegís tu pack</h3>
+      <p class="how-step-desc" data-i18n="how1Desc">Seleccionás el pack que más te guste. Cada uno tiene su precio y preview.</p>
+    </div>
+    <div class="how-step">
+      <div class="how-num">2</div>
+      <h3 class="how-step-title" data-i18n="how2Title">Pagás con MP o PayPal</h3>
+      <p class="how-step-desc" data-i18n="how2Desc">El pago lo recibimos nosotros. Una vez acreditado, le transferimos el monto a la modelo.</p>
+    </div>
+    <div class="how-step">
+      <div class="how-num">3</div>
+      <h3 class="how-step-title" data-i18n="how3Title">Ella te envía el contenido</h3>
+      <p class="how-step-desc" data-i18n="how3Desc">La modelo recibe el pago y te manda el contenido por privado al instante.</p>
+    </div>
+  </div>
+</section>
+
 <!-- ═══ FAQ ─── -->
 <section class="faq" id="faq">
   <div class="section-inner text-center">
@@ -612,6 +678,15 @@ const I18N = {
     donateUsd: '💳 Pagar',
     donateArs: '🇦🇷 Pagar',
     donateBtn: '💳 Pagar con Mercado Pago',
+    howTag: '¿Cómo funciona?',
+    howTitle: 'Así trabajamos',
+    howDesc: 'Todo transparente: vos pagás, nosotros recibimos, le pasamos el pago a la modelo y ella te entrega el contenido.',
+    how1Title: 'Elegís tu pack',
+    how1Desc: 'Seleccionás el pack que más te guste. Cada uno tiene su precio y preview.',
+    how2Title: 'Pagás con MP o PayPal',
+    how2Desc: 'El pago lo recibimos nosotros. Una vez acreditado, le transferimos el monto a la modelo.',
+    how3Title: 'Ella te envía el contenido',
+    how3Desc: 'La modelo recibe el pago y te manda el contenido por privado al instante.',
     securePayment: 'Pago procesado por Mercado Pago',
     buyMp: 'Mercado Pago',
     buyPp: 'PayPal',
@@ -664,6 +739,15 @@ const I18N = {
     donateUsd: '💳 Pay',
     donateArs: '🇦🇷 Pay',
     donateBtn: '💳 Pay with Mercado Pago',
+    howTag: 'How it works',
+    howTitle: 'How we work',
+    howDesc: 'Fully transparent: you pay, we receive, we transfer the payment to the model and she delivers the content.',
+    how1Title: 'Choose your pack',
+    how1Desc: 'Select the pack you like. Each has its own price and preview.',
+    how2Title: 'Pay with MP or PayPal',
+    how2Desc: 'We receive the payment. Once confirmed, we transfer the amount to the model.',
+    how3Title: 'She sends you the content',
+    how3Desc: 'The model gets the payment and sends you the content privately right away.',
     securePayment: 'Payment processed by Mercado Pago',
     buyMp: 'Mercado Pago',
     buyPp: 'PayPal',
